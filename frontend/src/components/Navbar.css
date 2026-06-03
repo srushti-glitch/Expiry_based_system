@@ -1,0 +1,129 @@
+/* Navbar container */
+.navbar {
+  background-color: #ffffff;  /* white navbar for contrast */
+  color: #333;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Flex container for logo and menu */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2b7a78;
+  text-decoration: none;
+}
+
+/* Navigation Menu */
+.nav-menu {
+   display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+/* Nav links */
+.nav-link {
+text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+color: #2b7a78; /* highlight on hover */
+}
+
+.nav-link.active {
+border-bottom: 2px solid #2b7a78;
+}
+
+/* Hamburger Menu Button - hidden on desktop */
+.menu-toggle {
+  display: none;
+  
+}
+
+/* Hamburger icon bars */
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Position the bars */
+.hamburger::before,
+.hamburger::after {
+  position: absolute;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+/* Animate hamburger when open */
+.hamburger.open {
+  background-color: transparent;
+}
+
+.hamburger.open::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.hamburger.open::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+     flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+  }
+}

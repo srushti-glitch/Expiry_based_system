@@ -1,0 +1,19 @@
+.admin-products {
+  padding: 1rem;
+}
+
+.admin-products h2 {
+  margin-bottom: 1rem;
+}
+
+.admin-products table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-products th,
+.admin-products td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}

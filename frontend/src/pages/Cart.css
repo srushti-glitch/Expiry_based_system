@@ -1,0 +1,133 @@
+.cart-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.cart-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  gap: 1rem;
+}
+
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item-info {
+  flex: 2;
+}
+
+.cart-item-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.cart-item-info p {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+.discount {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.cart-item-quantity {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-item-quantity input {
+  width: 50px;
+  padding: 0.3rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.cart-item-subtotal {
+  flex: 1;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+}
+
+.cart-item-remove {
+  flex: 0.5;
+  text-align: center;
+}
+
+.cart-item-remove button {
+  background-color: #e74c3c;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item-remove button:hover {
+  background-color: #c0392b;
+}
+
+.cart-summary {
+  margin-top: 2rem;
+  text-align: right;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.checkout-btn {
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  background-color: #27ae60;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  float: right;
+}
+
+.checkout-btn:hover {
+  background-color: #219150;
+}
+
+@media (max-width: 600px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-subtotal, .cart-item-quantity {
+    text-align: left;
+    margin-top: 0.5rem;
+  }
+
+  .checkout-btn {
+    width: 100%;
+    float: none;
+  }
+}

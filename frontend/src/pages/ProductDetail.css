@@ -1,0 +1,35 @@
+.product-detail {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.product-detail img {
+ width: 100%;
+  max-width: 400px; /* or any smaller size you want */
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .product-detail {
+    padding: 1rem;
+    margin: 20px;
+  }
+
+  .product-detail h1 {
+    font-size: 1.5rem;
+  }
+
+  .product-detail p {
+    font-size: 0.95rem;
+  }
+}

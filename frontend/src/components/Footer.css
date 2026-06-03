@@ -1,0 +1,22 @@
+/* src/components/Footer.css */
+
+.footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 25px 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer p {
+  margin: 6px 0;
+  font-size: 0.9rem;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .footer {
+    font-size: 0.85rem;
+    padding: 20px 8px;
+  }
+}

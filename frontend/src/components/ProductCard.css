@@ -1,0 +1,205 @@
+.product-card {
+  width: 260px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.image-container {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .image-container img {
+  transform: scale(1.1);
+}
+
+.discount-badge,
+.expired-badge {
+  position: absolute;
+  top: 10px;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  opacity: 0;
+  animation: fadeInBadge 0.5s forwards;
+  user-select: none;
+}
+
+.discount-badge {
+  left: 10px;
+  background: #e74c3c;
+}
+
+.expired-badge {
+  right: 10px;
+  background: #95a5a6;
+}
+
+@keyframes fadeInBadge {
+  to {
+    opacity: 1;
+  }
+}
+
+.product-details {
+  padding: 15px 20px;
+  flex-grow: 1;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  margin: 0 0 8px 0;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.2;
+  height: 2.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2ecc71;
+  margin: 0 0 8px 0;
+}
+
+.expiry {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-top: 1px solid #eee;
+  background-color: #fafafa;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.view-btn,
+.add-btn {
+  flex: 1 1 calc(50% - 5px);
+  border: none;
+  padding: 10px 0;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.view-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.view-btn:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.add-btn {
+  background-color: #27ae60;
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #1e8449;
+  transform: scale(1.05);
+}
+
+.view-btn:active,
+.add-btn:active {
+  transform: scale(0.95);
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .product-card {
+    width: 100%;
+  }
+
+  .card-buttons {
+    flex-direction: column;
+  }
+
+  .view-btn,
+  .add-btn {
+    flex: 1 1 100%;
+  }
+
+  .image-container {
+    height: 220px;
+  }
+}
+/* Expired badge styling */
+.expired-badge {
+  background-color: #e74c3c; /* bright red */
+  color: white;
+  right: 10px;
+  top: 10px;
+  position: absolute;
+  padding: 5px 10px;
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  opacity: 0;
+  animation: fadeInBadge 0.5s forwards;
+}
+
+/* Expired text below product name */
+.expiry.expired-text {
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+/* Disable add to cart button when expired */
+.add-btn:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+  color: #666;
+  transform: none !important;
+  pointer-events: none;
+}
+
+/* Container that wraps all cards (you should wrap your product cards in this) */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}

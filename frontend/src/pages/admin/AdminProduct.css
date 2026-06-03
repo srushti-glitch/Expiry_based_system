@@ -1,0 +1,47 @@
+.add-product-page {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  border-radius: 10px;
+}
+
+.add-product-page h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.add-product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-product-form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.add-product-form button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-product-form button:hover {
+  background-color: #219150;
+}
+
+.status-message {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}

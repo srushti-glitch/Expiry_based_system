@@ -1,5 +1,5 @@
-create database Expiry_based_dyanamic_discount_system
-use Expiry_based_dyanamic_discount_system
+CREATE DATABASE expiry_based_system_data;
+USE expiry_based_system_data;
 
 CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -13,11 +13,10 @@ CREATE TABLE products (
     quantity INT DEFAULT 0,
     image_url TEXT
 );
-CREATE TABLE admins (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE admins ( 
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(50) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL  -- store hashed passwords!
 );
 
 CREATE TABLE discount_rules (
