@@ -9,8 +9,11 @@ const adminAuthRoutes = require('./routes/adminAuth');
 const discountRulesRoutes = require('./routes/adminDiscount.js');
 
 app.use(cors({
-  origin: 'http://localhost:3000', // your frontend URL
-  credentials: true,               // allows cookies/auth headers
+  origin: [
+    "http://localhost:3000",
+    "https://srushti-glitch.github.io"
+  ],
+  credentials: true,
 }));
 app.use(express.json());
 
@@ -25,7 +28,7 @@ app.use("/api/products", productRoutes);
 app.use('/api/admin/auth', adminAuthRoutes);
 app.use('/api/admin/discount-rules', discountRulesRoutes);
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
