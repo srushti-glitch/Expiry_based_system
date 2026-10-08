@@ -6,7 +6,7 @@ const Categories = ({ onSelect }) => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products/categories/all') 
+    axios.get('https://expiry-based-system.onrender.com/api/products/categories/all') 
       .then(res => setCategories(['All', ...res.data]))
       .catch(err => console.error('Failed to load categories', err));
   }, []);

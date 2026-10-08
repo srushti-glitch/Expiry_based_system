@@ -17,7 +17,7 @@ const ProductList = () => {
   // Fetch products
   const fetchProducts = useCallback(async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/products?limit=1000', {
+      const res = await axios.get('https://expiry-based-system.onrender.com/api/products?limit=1000', {
         headers: { Authorization: `Bearer ${token}` }
       });
       let allProducts = res.data.products || [];
@@ -43,7 +43,7 @@ const ProductList = () => {
   // Fetch categories
   const fetchCategories = useCallback(async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/products/categories/all', {
+      const res = await axios.get('https://expiry-based-system.onrender.com/api/products/categories/all', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setCategories(res.data);
@@ -70,7 +70,7 @@ const ProductList = () => {
     if (!window.confirm('Are you sure you want to delete this product?')) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`, {
+      await axios.delete(`https://expiry-based-system.onrender.com/api/products/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setProducts(products.filter(p => p.id !== id));

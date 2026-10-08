@@ -16,7 +16,7 @@ const AdminLogin = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:5000/api/admin/auth/login', {
+      const res = await axios.post('https://expiry-based-system.onrender.com/api/admin/auth/login', {
         username,
         password,
       });

@@ -22,7 +22,7 @@ const getImageUrl = () => {
   const img = product.image || product.image_url; // whatever field you use
   if (!img) return '/placeholder.jpeg'; // fallback
   if (img.startsWith('http')) return img;  // external URL
-  return `http://localhost:5000${img.startsWith('/') ? img : '/' + img}`; // local uploads
+  return `https://expiry-based-system.onrender.com${img.startsWith('/') ? img : '/' + img}`; // local uploads
 };
 
 

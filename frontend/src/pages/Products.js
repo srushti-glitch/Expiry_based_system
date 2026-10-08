@@ -19,7 +19,7 @@ const Products = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/products?limit=1000');
+      const res = await fetch('https://expiry-based-system.onrender.com/api/products?limit=1000');
       const data = await res.json();
       const productsData = data.products || [];
       setProducts(productsData);

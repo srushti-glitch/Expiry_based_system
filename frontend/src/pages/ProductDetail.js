@@ -56,7 +56,7 @@ const ProductDetail = () => {
 
         let prod = product;
         if (!prod) {
-          const res = await fetch(`http://localhost:5000/api/products/${id}`);
+          const res = await fetch(`https://expiry-based-system.onrender.com/api/products/${id}`);
           if (!res.ok) throw new Error('Product not found');
           prod = await res.json();
           setProduct(prod);
@@ -65,7 +65,7 @@ const ProductDetail = () => {
         let rulesData = rules;
         if (rules.length === 0) {
           const token = localStorage.getItem('admin_token');
-          const res = await fetch('http://localhost:5000/api/admin/discount-rules', {
+          const res = await fetch('https://expiry-based-system.onrender.com/api/admin/discount-rules', {
             headers: {
               Authorization: `Bearer ${token}`,
               'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ const ProductDetail = () => {
     const img = product.image || product.image_url;
     if (!img) return '/placeholder.jpeg';
     if (img.startsWith('http')) return img;
-    return `http://localhost:5000${img.startsWith('/') ? img : '/' + img}`;
+    return `https://expiry-based-system.onrender.com${img.startsWith('/') ? img : '/' + img}`;
   };
 
   return (

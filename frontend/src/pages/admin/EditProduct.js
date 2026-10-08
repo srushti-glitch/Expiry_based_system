@@ -34,7 +34,7 @@ const EditProduct = () => {
 
     const fetchCategories = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/products/categories/all');
+        const res = await axios.get('https://expiry-based-system.onrender.com/api/products/categories/all');
         setCategories(res.data);
       } catch (err) {
         setError('Failed to load categories');
@@ -43,7 +43,7 @@ const EditProduct = () => {
 
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/products/${id}`);
+        const res = await axios.get(`https://expiry-based-system.onrender.com/api/products/${id}`);
         const p = res.data;
         setForm({
           name: p.name,
@@ -101,7 +101,7 @@ const EditProduct = () => {
 
       console.log('Sending PUT request with token:', token);
 
-      await axios.put(`http://localhost:5000/api/products/${id}`, formData, {
+      await axios.put(`https://expiry-based-system.onrender.com/api/products/${id}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',

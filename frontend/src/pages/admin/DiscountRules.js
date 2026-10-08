@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // Create axios instance outside the component to avoid re-creation on every render
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api/admin/discount-rules',
+  baseURL: 'https://expiry-based-system.onrender.com/api/admin/discount-rules',
   headers: {
     Authorization: `Bearer ${localStorage.getItem('admin_token')}`,
     'Content-Type': 'application/json',

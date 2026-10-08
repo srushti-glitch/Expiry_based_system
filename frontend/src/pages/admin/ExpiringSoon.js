@@ -11,7 +11,7 @@ const ExpiringSoon = () => {
   useEffect(() => {
     async function fetchExpiring() {
       try {
-        const res = await axios.get('http://localhost:5000/api/admin/expiring-soon', {
+        const res = await axios.get('https://expiry-based-system.onrender.com/api/admin/expiring-soon', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setProducts(res.data);
@@ -32,7 +32,7 @@ const ExpiringSoon = () => {
   const applyClearance = async productId => {
     try {
       await axios.post(
-        `http://localhost:5000/api/admin/products/${productId}/apply-clearance`,
+        `https://expiry-based-system.onrender.com/api/admin/products/${productId}/apply-clearance`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

@@ -23,7 +23,7 @@ const AddProduct = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/products/categories/all');
+        const res = await axios.get('https://expiry-based-system.onrender.com/api/products/categories/all');
         setCategories(res.data);
         if (res.data.length > 0) {
           setForm(f => ({ ...f, category: res.data[0] }));
@@ -64,7 +64,7 @@ const AddProduct = () => {
       formData.append('quantity', form.quantity);
       if (form.image) formData.append('image', form.image);
 
-      const res = await axios.post('http://localhost:5000/api/products', formData, {
+      const res = await axios.post('https://expiry-based-system.onrender.com/api/products', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',
